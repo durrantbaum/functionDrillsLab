@@ -116,8 +116,6 @@ const exclaim = function(str) {
 // declaration
 // !expression
 
-
-
 ////////////////// PROBLEM 8 ////////////////////
 
 /*
@@ -157,7 +155,6 @@ function exclaimFour(str) {
 // !declaration
 // expression
 
-
 ////////////////// PROBLEM 10 ////////////////////
 /*
   Write a function called nameCheck that takes in a name parameter.
@@ -191,7 +188,19 @@ console.log(nameGreeting)
 */
 
 //CODE HERE
-
+function faveColorFinder(color) {
+  if(color === 'red'){
+    return 'red is a great color'
+  } else if(color === 'green'){
+    return 'green is a solid favorite color'
+  } else if(color === 'black'){
+    return 'so trendy'
+  } else {
+    return 'you need to evaluate your favorite color choice'
+  }
+}
+let colorRating = faveColorFinder('purple')
+console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -202,8 +211,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
-
+function printAllNames (namesArr){
+  for(let i = 0; i < namesArr.length; i++){
+    console.log(namesArr[i])
+  }
+}
+printAllNames(namesArr)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -213,7 +226,15 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+function thatsOdd (number){
+  if(number % 2 === 0){
+    return 'That is not odd!'
+  } else {
+    return 'That is odd indeed!'
+  }
+}
+let oddChecker = thatsOdd(5)
+console.log(oddChecker)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -226,7 +247,11 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+const bestMovie = (movieTitle) => {
+  return `${movieTitle} is the best movie ever!`
+}
+let answer = bestMovie('Sharknado')
+console.log(answer)
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -240,7 +265,19 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
+function bigOrSmall(bigOrSmallArray){
+  let answers = []
+  for(let i = 0; i < bigOrSmallArray.length; i++){
+    if(bigOrSmallArray[i] > 100){
+      answers.push('big')
+    } else {
+      answers.push('small')
+    }
+  }
+let arrayEvaluator = answers
+  console.log(arrayEvaluator)
+}
+bigOrSmall(bigOrSmallArray)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -251,8 +288,17 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
-
+function theEliminator (contestants, loser) {
+  for(let i = 0; i < contestants.length; i++) {
+    if(contestants[i] === loser) {
+      let removedContestants = contestants.splice([i], 1)
+      console.log(removedContestants)
+    } else {
+      console.log(contestants)
+    }
+  }
+}
+theEliminator(contestants, loser)
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -261,7 +307,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+const upper = (sampleString) => {
+  console.log(sampleString.toUpperCase())
+}
+upper(sampleString)
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -273,6 +322,17 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+let email = '  thisismyemail@gmail.com  '
+//CODE HERE
+function emailCheck (email) {
+  if(email.includes('@')){
+    console.log(email.trim())
+    console.log('email verified')
+} else {
+  console.log("must provide a valid email address")
+  }
+}
+emailCheck(email)
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
@@ -281,7 +341,22 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+let amountOfGold = 10
+let totalFrogsBefore = 0
 
+function appropriateName(amountOfGold) {
+  for(let i = 0; i < amountOfGold + 3; i++){
+    if(amountOfGold >= 2){
+      totalFrogsBefore += 1
+      amountOfGold -= 3
+      console.log(`You bought 1 chocolate Frog and have ${amountOfGold} gold left.`)
+    } else {
+      console.log('You ran out of money')
+    }
+  }
+}
+let totalFrogs = appropriateName(amountOfGold)
+console.log(totalFrogsBefore)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -289,7 +364,7 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+//! I did this problem differently than I think was intended and I don't know how to come up with the answer you were looking for.
 
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -322,13 +397,34 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck','rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck','rubberDuck','sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
+
+
+
+
+
+
+
+
+
+
+// let totalFrogs2 = 0
+
+// function frogBuyer2(num) {
+//   while((num / 3) % 1 != 0){
+//     num--
+//   }
+//   return num / 3
+// }
+
+// totalFrogs2 = frogBuyer2(13)
+// console.log(totalFrogs2)
