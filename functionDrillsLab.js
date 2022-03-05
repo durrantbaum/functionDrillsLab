@@ -373,7 +373,25 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+//! This is the code that was done by John. I missed doing this problem while I was working on the lab.
 
+function isArrayAscending(sampleArray){
+  let isAsc = true
+  
+  for(let i = 0; i < sampleArray.length; i++){
+    const currentValue = sampleArray[i]
+    const nextValue = sampleArray[i + 1]
+
+    if(currentValue > nextValue){
+      return false
+    }
+  }
+  return true
+}
+
+const arrayIsAscending = isArrayAscending(sampleArray)
+
+console.log({arrayIsAscending})
 
 ////////////////// PROBLEM 22 ////////////////////
 
